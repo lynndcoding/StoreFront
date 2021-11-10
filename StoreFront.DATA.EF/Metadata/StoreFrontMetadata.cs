@@ -193,7 +193,7 @@ namespace StoreFront.DATA.EF//.Metadata
         }
 
         #endregion
-
+        //TODO: Scaffolding
 
     }
 }
