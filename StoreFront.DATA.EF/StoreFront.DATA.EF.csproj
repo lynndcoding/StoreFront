@@ -65,7 +65,6 @@
     <Compile Include="BeerStyle.cs">
       <DependentUpon>StoreFront.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Customer.cs">
       <DependentUpon>StoreFront.tt</DependentUpon>
     </Compile>
@@ -75,6 +74,7 @@
     <Compile Include="Employee.cs">
       <DependentUpon>StoreFront.tt</DependentUpon>
     </Compile>
+    <Compile Include="Metadata\StoreFrontMetadata.cs" />
     <Compile Include="Package.cs">
       <DependentUpon>StoreFront.tt</DependentUpon>
     </Compile>
