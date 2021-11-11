@@ -1,0 +1,50 @@
+﻿@model StoreFront.DATA.EF.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EEFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EEFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EELastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EELastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DirectReport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DirectReport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee1.EEFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee1.EEFirstName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

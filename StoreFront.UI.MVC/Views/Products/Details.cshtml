@@ -1,0 +1,90 @@
+﻿@model StoreFront.DATA.EF.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BeerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BeerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ABVID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ABVID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateSold)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateSold)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DirectReportID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DirectReportID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BeerStyle.BeerStyle1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BeerStyle.BeerStyle1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.CustFName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.CustFName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.EEFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.EEFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Package.PkgID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Package.PkgID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.ProductStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status.ProductStatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BeerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

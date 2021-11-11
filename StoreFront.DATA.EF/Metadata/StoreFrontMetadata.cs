@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace StoreFront.DATA.EF//.Metadata
 {
     class StoreFrontMetadata
@@ -61,14 +62,14 @@ namespace StoreFront.DATA.EF//.Metadata
         }
 
         //TODO:  FIX ERRORS HERE
-        [MetadataType(typeof(CustomerMetadata))]
-        public partial class Customer
-        {
-            //public string FullName
-            //{
-            //    get { return CustFName + " " + CustLName; }
-            //}
-        }
+        //[MetadataType(typeof(CustomerMetadata))]
+        //public partial class Customer
+        //{
+        //    public string FullName
+        //    {
+        //        get { return CustFName + " " + CustLName; }
+        //    }
+        //}
         #endregion
 
         #region Employee Metadata
@@ -145,6 +146,9 @@ namespace StoreFront.DATA.EF//.Metadata
             [Display(Name = "Date Sole")]
             [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true, NullDisplayText = "-N/A-")]
             public System.DateTime DateSold { get; set; }
+            [StringLength(50, ErrorMessage = "Label Image cannot be more than 100 characters")]
+            [Display(Name = "Label Image")]
+            public string BeerImage { get; set; }
 
 
             [Required(ErrorMessage = "**Units Sold is required**")]
@@ -167,7 +171,6 @@ namespace StoreFront.DATA.EF//.Metadata
             [Range(0, double.MaxValue, ErrorMessage = "**Value must be a valid number, 0 or larger.**")]
             [Display(Name = "Units Sold")]
             public int PkgID { get; set; }
-
         }
         [MetadataType(typeof(ProductMetadata))]
         public partial class Product
@@ -193,7 +196,5 @@ namespace StoreFront.DATA.EF//.Metadata
         }
 
         #endregion
-        //TODO: Scaffolding
-
     }
 }

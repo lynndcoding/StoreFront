@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="StoreFrontModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="StoreFrontModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -119,6 +119,7 @@
           <Property Name="ProductID" Type="int" Nullable="false" />
           <Property Name="CustomerID" Type="int" Nullable="false" />
           <Property Name="DirectReportID" Type="int" Nullable="false" />
+          <Property Name="BeerImage" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="PkgID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Statuses">
@@ -321,8 +322,7 @@
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="StoreFrontModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -450,6 +450,7 @@
           <NavigationProperty Name="Employee" Relationship="Self.FK_Products_Employees" FromRole="Products" ToRole="Employees" />
           <NavigationProperty Name="Package" Relationship="Self.FK_Products_Packages" FromRole="Products" ToRole="Packages" />
           <NavigationProperty Name="Status" Relationship="Self.FK_Products_Statuses" FromRole="Products" ToRole="Statuses" />
+          <Property Name="BeerImage" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Status">
           <Key>
@@ -731,6 +732,7 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="StoreFrontModel.Product">
               <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="BeerImage" ColumnName="BeerImage" />
                 <ScalarProperty Name="BeerID" ColumnName="BeerID" />
                 <ScalarProperty Name="BeerStyleID" ColumnName="BeerStyleID" />
                 <ScalarProperty Name="BeerName" ColumnName="BeerName" />

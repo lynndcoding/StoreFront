@@ -1,0 +1,75 @@
+﻿@model IEnumerable<StoreFront.DATA.EF.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustFName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustLName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustStreetAddy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustZip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsMugClubMbr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailAddy)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustFName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustLName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustStreetAddy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustZip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsMugClubMbr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailAddy)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CustomerID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CustomerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CustomerID })
+        </td>
+    </tr>
+}
+
+</table>

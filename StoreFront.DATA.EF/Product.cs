@@ -24,6 +24,7 @@ namespace StoreFront.DATA.EF
         public int CustomerID { get; set; }
         public int DirectReportID { get; set; }
         public int PkgID { get; set; }
+        public string BeerImage { get; set; }
     
         public virtual BeerStyle BeerStyle { get; set; }
         public virtual Customer Customer { get; set; }

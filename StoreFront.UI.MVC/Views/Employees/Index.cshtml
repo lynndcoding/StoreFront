@@ -1,0 +1,51 @@
+﻿@model IEnumerable<StoreFront.DATA.EF.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EEFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EELastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DirectReport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee1.EEFirstName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EEFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EELastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DirectReport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee1.EEFirstName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EmployeeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EmployeeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EmployeeID })
+        </td>
+    </tr>
+}
+
+</table>
