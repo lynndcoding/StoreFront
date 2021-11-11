@@ -20,7 +20,7 @@ namespace StoreFront.UI.MVC.Controllers
             var products = db.Products.Include(p => p.BeerStyle).Include(p => p.Customer).Include(p => p.Employee).Include(p => p.Package).Include(p => p.Status);
             return View(products.ToList());
         }
-        
+
         // GET: Products/Details/5
         public ActionResult Details(int? id)
         {
@@ -52,7 +52,7 @@ namespace StoreFront.UI.MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BeerID,BeerStyleID,BeerName,ABVID,DateSold,EmployeeID,ProductID,CustomerID,DirectReportID,PkgID")] Product product)
+        public ActionResult Create([Bind(Include = "BeerID,BeerStyleID,BeerName,ABVID,DateSold,EmployeeID,ProductID,CustomerID,DirectReportID,PkgID,BeerImage")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +94,7 @@ namespace StoreFront.UI.MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BeerID,BeerStyleID,BeerName,ABVID,DateSold,EmployeeID,ProductID,CustomerID,DirectReportID,PkgID")] Product product)
+        public ActionResult Edit([Bind(Include = "BeerID,BeerStyleID,BeerName,ABVID,DateSold,EmployeeID,ProductID,CustomerID,DirectReportID,PkgID,BeerImage")] Product product)
         {
             if (ModelState.IsValid)
             {
